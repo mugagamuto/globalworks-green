@@ -1,4 +1,4 @@
-ï»¿"use client";
+"use client";
 
 import React, { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
@@ -33,12 +33,12 @@ export default function JobDetailPage() {
   const meta = useMemo(() => {
     if (!job) return [];
     return [
-      ["Country", job.country || "â€”"],
-      ["Salary", job.salary_range || "â€”"],
-      ["Visa Type", (job as any).visa_type || "â€”"],
+      ["Country", job.country || "—"],
+      ["Salary", job.salary_range || "—"],
+      ["Visa Type", (job as any).visa_type || "—"],
       ["Sponsorship", (job as any).sponsorship_available === false ? "No" : "Yes"],
-      ["Contract", (job as any).contract_type || "â€”"],
-      ["Experience", (job as any).experience_level || "â€”"],
+      ["Contract", (job as any).contract_type || "—"],
+      ["Experience", (job as any).experience_level || "—"],
     ] as const;
   }, [job]);
 
@@ -85,7 +85,7 @@ export default function JobDetailPage() {
           </div>
 
           <div className="mt-6 grid gap-2">
-            <Button onClick={() => router.push(/apply?jobId=)}>Apply now</Button>
+            <Button onClick={() => router.push(`/apply?jobId=${job.id}`)}>Apply now</Button>
             <Button href="/jobs" variant="secondary">Browse more jobs</Button>
           </div>
         </Card>
