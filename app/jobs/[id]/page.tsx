@@ -33,12 +33,12 @@ export default function JobDetailPage() {
   const meta = useMemo(() => {
     if (!job) return [];
     return [
-      ["Country", job.country || "—"],
-      ["Salary", job.salary_range || "—"],
-      ["Visa Type", (job as any).visa_type || "—"],
+      ["Country", job.country || "â€”"],
+      ["Salary", job.salary_range || "â€”"],
+      ["Visa Type", (job as any).visa_type || "â€”"],
       ["Sponsorship", (job as any).sponsorship_available === false ? "No" : "Yes"],
-      ["Contract", (job as any).contract_type || "—"],
-      ["Experience", (job as any).experience_level || "—"],
+      ["Contract", (job as any).contract_type || "â€”"],
+      ["Experience", (job as any).experience_level || "â€”"],
     ] as const;
   }, [job]);
 
