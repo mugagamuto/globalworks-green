@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
@@ -23,8 +23,7 @@ export default function JobDetailPage() {
       if (!id) return;
       const { data, error } = await supabase.from("jobs").select("*").eq("id", id).single();
       if (!alive) return;
-      if (error) setJob(null);
-      else setJob(data as Job);
+      setJob(error ? null : (data as Job));
       setLoading(false);
     })();
     return () => { alive = false; };
